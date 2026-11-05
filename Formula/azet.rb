@@ -1,8 +1,8 @@
 class Azet < Formula
   desc "AI coding agent in your terminal, by AZET LLC"
   homepage "https://github.com/azet-llc/azet-cli"
-  url "https://github.com/azet-llc/azet-cli/archive/refs/tags/v0.3.0.tar.gz"
-  sha256 "424e2beca82dd0015917c2ddf776b480e1c190f5cc8654ad3a226eca800714c0"
+  url "https://github.com/azet-llc/azet-cli/archive/refs/tags/v0.3.1.tar.gz"
+  sha256 "383567c9ccdc750e7b00e5165db05247b594891ec514970f4e71d4bc4219c6fb"
   license "MIT"
 
   # shortcut: macOS only; the agent build script also makes Linux binaries when we add Linux
@@ -27,7 +27,7 @@ class Azet < Formula
   end
 
   test do
-    assert_match "azet 0.3.0", shell_output("#{bin}/azet --version")
+    assert_match "azet 0.3.1", shell_output("#{bin}/azet --version")
     assert_match "azet", shell_output("#{bin}/azet --help-all")
   end
 end
