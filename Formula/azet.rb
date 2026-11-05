@@ -1,8 +1,8 @@
 class Azet < Formula
   desc "AI coding agent in your terminal, free trial with no key"
   homepage "https://github.com/azet-llc/azet-cli"
-  url "https://github.com/azet-llc/azet-cli/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "c241d98145bccf4ed459e805914d138046bb1dbbbee1da22558c36619899f985"
+  url "https://github.com/azet-llc/azet-cli/archive/refs/tags/v0.2.0.tar.gz"
+  sha256 "a6b7841cc0f1d0813cc54c9339000e6d130113d4e00a9f8b338ed07be353a274"
   license "MIT"
 
   # shortcut: macOS only; Pi also ships linux tarballs when we add Linux
@@ -20,12 +20,12 @@ class Azet < Formula
   end
 
   def install
-    libexec.install "azet"
+    libexec.install "azet", "azet.ts"
     resource("pi").stage { (libexec/"pi").install Dir["*"] }
     (bin/"azet").write_env_script libexec/"azet", AZET_PI: libexec/"pi/pi"
   end
 
   test do
-    assert_match "Usage", shell_output("#{libexec}/pi/pi --help")
+    assert_match "azet 0.2.0", shell_output("#{bin}/azet --version")
   end
 end
