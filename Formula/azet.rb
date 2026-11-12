@@ -1,8 +1,8 @@
 class Azet < Formula
   desc "AI coding agent in your terminal, by AZET LLC"
   homepage "https://github.com/azet-llc/azet-cli"
-  url "https://github.com/azet-llc/azet-cli/archive/refs/tags/v0.8.0.tar.gz"
-  sha256 "978a65e4679d6812995fb97196afea51fa707437ab029a74869be39017ffdf6e"
+  url "https://github.com/azet-llc/azet-cli/archive/refs/tags/v0.9.0.tar.gz"
+  sha256 "d7728a0aa9489bdb97ba62ab56145ac773c75ae73bfc28d25f2a1f5ba27abf88"
   license "MIT"
 
   # shortcut: macOS only; the agent build script also makes Linux binaries when we add Linux
@@ -10,7 +10,7 @@ class Azet < Formula
   # azet app runs on Node.js; not a hard dependency (a pinned node blocks the install), the launcher says "brew install node" when missing
   depends_on "qrencode" # azet app --lan prints a QR code for the phone
 
-  # azet-agent = our build of Pi (MIT), see agent-build/ in the repo
+  # azet-agent = our build of Pi (MIT), see agent-build/ in the repo; unchanged since 0.8.0, so its files stay on the v0.8.0 release
   resource "agent" do
     on_arm do
       url "https://github.com/azet-llc/azet-cli/releases/download/v0.8.0/azet-agent-darwin-arm64.tar.gz"
@@ -33,11 +33,12 @@ class Azet < Formula
     <<~EOS
       azet app (the window and phone app) needs Node.js:  brew install node
       The browser tool needs agent-browser:  brew install agent-browser && agent-browser install
+      Terminals in azet app need python3:  xcode-select --install
     EOS
   end
 
   test do
-    assert_match "azet 0.8.0", shell_output("#{bin}/azet --version")
+    assert_match "azet 0.9.0", shell_output("#{bin}/azet --version")
     assert_match "on your phone", shell_output("#{bin}/azet app --help")
     assert_path_exists libexec/"app/index.html"
     assert_match "azet", shell_output("#{bin}/azet --help-all")
