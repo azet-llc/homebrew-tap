@@ -7,7 +7,7 @@ class Azet < Formula
 
   # shortcut: macOS only; the agent build script also makes Linux binaries when we add Linux
   depends_on :macos
-  depends_on "node"     # azet app (app/server.mjs)
+  # azet app runs on Node.js; not a hard dependency (a pinned node blocks the install), the launcher says "brew install node" when missing
   depends_on "qrencode" # azet app --lan prints a QR code for the phone
 
   # azet-agent = our build of Pi (MIT), see agent-build/ in the repo
