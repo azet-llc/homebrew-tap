@@ -1,8 +1,8 @@
 class Azet < Formula
   desc "AI coding agent in your terminal, by AZET LLC"
   homepage "https://github.com/azet-llc/azet-cli"
-  url "https://github.com/azet-llc/azet-cli/archive/refs/tags/v0.9.1.tar.gz"
-  sha256 "622c77a1a10a29de1fcddaf38e69993b39166c5b975690fb3b26c86786497c87"
+  url "https://github.com/azet-llc/azet-cli/archive/refs/tags/v0.9.2.tar.gz"
+  sha256 "a1721e63deb719163d0cd92c83a669bd0887fa3dd2f9c1e54c6ec50586778ae0"
   license "MIT"
 
   # shortcut: macOS only; the agent build script also makes Linux binaries when we add Linux
@@ -23,7 +23,7 @@ class Azet < Formula
   end
 
   def install
-    libexec.install "azet", "azet.ts", "SYSTEM.md", "sandbox.sb", "app"
+    libexec.install "azet", "azet.ts", "SYSTEM.md", "sandbox.sb", "app", "extensions"
     prefix.install "LICENSE-pi", "THIRD_PARTY_NOTICES.md" # LICENSE and README are installed by brew itself
     resource("agent").stage { (libexec/"azet-agent").install Dir["*"] }
     bin.write_exec_script libexec/"azet"
@@ -37,11 +37,12 @@ class Azet < Formula
   end
 
   test do
-    assert_match "azet 0.9.1", shell_output("#{bin}/azet --version")
+    assert_match "azet 0.9.2", shell_output("#{bin}/azet --version")
     assert_match "on your phone", shell_output("#{bin}/azet app --help")
     assert_path_exists libexec/"app/index.html"
     assert_match "azet", shell_output("#{bin}/azet --help-all")
     assert_path_exists libexec/"sandbox.sb"
+    assert_path_exists libexec/"extensions/subagent/index.ts"
     assert_match "Mario Zechner", (prefix/"LICENSE-pi").read
     assert_path_exists libexec/"azet-agent/THIRD_PARTY_NOTICES.md"
   end
