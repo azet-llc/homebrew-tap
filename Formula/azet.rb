@@ -1,8 +1,8 @@
 class Azet < Formula
   desc "AI coding agent for macOS, by AZET LLC"
   homepage "https://azet.io/products/azet-agent"
-  url "https://github.com/azet-llc/azet/releases/download/v0.9.5/azet-0.9.5-darwin.tar.gz"
-  sha256 "022fcecc8e125e9e3edb4209c35d84acc11af791ea8271f4bed7f87774e27723"
+  url "https://github.com/azet-llc/azet/releases/download/v0.9.6/azet-0.9.6-darwin.tar.gz"
+  sha256 "66097b627b3e80467461360f1c12a838df40e21a04c9c98af3bf6af3618ab579"
   license :cannot_represent # proprietary (AZET LLC); third-party parts keep their licenses, see THIRD_PARTY_NOTICES.md
 
   # shortcut: macOS only; Linux comes with the Linux build
@@ -30,7 +30,7 @@ class Azet < Formula
   def caveats
     <<~EOS
       The Mac app (no Terminal needed): https://azet.io/products/azet-agent
-      The browser tool needs agent-browser:  brew install agent-browser && agent-browser install
+      The browser tool uses AZET Desktop when it is installed; otherwise:  brew install agent-browser && agent-browser install
       Terminals in azet app need python3:  xcode-select --install
     EOS
   end
