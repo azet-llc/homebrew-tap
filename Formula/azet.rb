@@ -11,12 +11,12 @@ class Azet < Formula
   # azet-agent: the agent runtime
   resource "agent" do
     on_arm do
-      url "https://github.com/azet-llc/azet/releases/download/agent-0.8.3/azet-agent-darwin-arm64.tar.gz"
-      sha256 "fc39107d22c1d19a0ddb003b0f3362e475a2147c543173c6e904db6b117daafc"
+      url "https://github.com/azet-llc/azet/releases/download/agent-0.8.4/azet-agent-darwin-arm64.tar.gz"
+      sha256 "6965e613d49f38493bf1642e8a23aaf7e6bc8fa98f15c81665e9f65afd86226a"
     end
     on_intel do
-      url "https://github.com/azet-llc/azet/releases/download/agent-0.8.3/azet-agent-darwin-x64.tar.gz"
-      sha256 "b69dbbac5be71831c8ce927f9c5443b863161110dfaae50e4fad2ed7bd14a9eb"
+      url "https://github.com/azet-llc/azet/releases/download/agent-0.8.4/azet-agent-darwin-x64.tar.gz"
+      sha256 "9d39230f18094cdec6355a5663ec63e8d03b606041f6d9cf7597ff4366987cd0"
     end
   end
 
