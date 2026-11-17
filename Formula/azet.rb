@@ -8,15 +8,15 @@ class Azet < Formula
   # shortcut: macOS only; Linux comes with the Linux build
   depends_on :macos
 
-  # azet-agent: the agent runtime (built on Pi, MIT), unchanged since 0.8.0
+  # azet-agent: the agent runtime (built on Pi, MIT), 0.8.1 ships without docs and examples
   resource "agent" do
     on_arm do
-      url "https://github.com/azet-llc/azet/releases/download/agent-0.8.0/azet-agent-darwin-arm64.tar.gz"
-      sha256 "ed8658b3de662fb68592dc77d504f1ea1755ee329b002c5c3fe105a185991c03"
+      url "https://github.com/azet-llc/azet/releases/download/agent-0.8.1/azet-agent-darwin-arm64.tar.gz"
+      sha256 "fadd18568ae00fc01d028fb1dbcbf2cf09228fdce13544325ae7e28ed61eee8d"
     end
     on_intel do
-      url "https://github.com/azet-llc/azet/releases/download/agent-0.8.0/azet-agent-darwin-x64.tar.gz"
-      sha256 "07316efd6d3fa057bd303f279b370bad7b64a5de7d541db9ecc052e8f407d8ce"
+      url "https://github.com/azet-llc/azet/releases/download/agent-0.8.1/azet-agent-darwin-x64.tar.gz"
+      sha256 "510d9f54bd394c3eaa4fe5a2e15ffa76b0b717749be4523c63a49e40ba49386d"
     end
   end
 
