@@ -7,6 +7,7 @@ brew install azet-llc/tap/azet
 ## AZET Desktop
 
 ```sh
+brew trust azet-llc/tap   # newer Homebrew asks this once for casks from a tap
 brew install --cask azet-llc/tap/azet-desktop
 ```
 

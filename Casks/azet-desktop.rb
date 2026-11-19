@@ -3,8 +3,7 @@ cask "azet-desktop" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/azet-llc/azet-desktop/releases/latest/download/azet-macos-arm64.dmg",
-      verified: "github.com/azet-llc/azet-desktop/"
+  url "https://github.com/azet-llc/azet-desktop/releases/latest/download/azet-macos-arm64.dmg"
   name "AZET Desktop"
   desc "Run AI coding agents side by side, with a browser and your phone, by AZET LLC"
   homepage "https://azet.io/"
