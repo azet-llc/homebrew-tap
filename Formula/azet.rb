@@ -1,8 +1,8 @@
 class Azet < Formula
   desc "AI coding agent for macOS, by AZET LLC"
   homepage "https://azet.io/products/azet-agent"
-  url "https://github.com/azet-llc/azet/releases/download/v0.9.20/azet-0.9.20-darwin.tar.gz"
-  sha256 "ed207a9ee60c0accbbbd6a5c078a908779fd0cfd9c2a5f70051b42e7c80316cf"
+  url "https://github.com/azet-llc/azet/releases/download/v0.9.21/azet-0.9.21-darwin.tar.gz"
+  sha256 "d10538fff28f4bc73191560c0b0e0e340397eed89d6366f6f23939a1a653bce8"
   license :cannot_represent # proprietary (AZET LLC); third-party parts keep their licenses, see THIRD_PARTY_NOTICES.md
 
   # shortcut: macOS only; Linux comes with the Linux build
