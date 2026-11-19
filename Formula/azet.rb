@@ -36,7 +36,7 @@ class Azet < Formula
   end
 
   test do
-    assert_match "azet 0.9.4", shell_output("#{bin}/azet --version")
+    assert_match "azet 0.9.21", shell_output("#{bin}/azet --version")
     assert_match "on your phone", shell_output("#{bin}/azet app --help")
     assert_path_exists libexec/"app/index.html"
     assert_path_exists libexec/"app/server.js"
